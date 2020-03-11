@@ -15,6 +15,95 @@
       <label for="03">Coffee</label>
     </div>
 
-    <style></style>
+    <style>
+      .classlist {
+        --background: #ffffff;
+        --text: #414856;
+        --check: #4f29f0;
+        --disabled: #c3c8de;
+        --width: 100px;
+        --height: 140px;
+        --border-radius: 10px;
+        background: var(--background);
+        width: var(--width);
+        height: var(--height);
+        border-radius: var(--border-radius);
+        position: relative;
+        box-shadow: 0 10px 30px rgba(#414856, 0.05);
+        padding: 30px 45px;
+        display: grid;
+        grid-template-columns: 30px auto;
+        align-items: center;
+      }
+
+      .classlist label {
+        color: var(--text);
+        position: relative;
+        cursor: pointer;
+        display: grid;
+        align-items: center;
+        width: fit-content;
+        transition: color 0.3s ease;
+      }
+      .classlist label::before,
+      label::after {
+        content: '';
+        position: absolute;
+      }
+
+      .classlist label::before {
+        height: 2px;
+        width: 8px;
+        left: -27px;
+        background: var(--check);
+        border-radius: 2px;
+        transition: background 0.3s ease;
+      }
+
+      .classlist label::after {
+        height: 4px;
+        width: 4px;
+        top: 8px;
+        left: -25px;
+        border-radius: 50%;
+      }
+
+      .classlist input[type='checkbox'] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        position: relative;
+        height: 15px;
+        width: 15px;
+        outline: none;
+        border: 0;
+        margin: 0 15px 0 0;
+        cursor: pointer;
+        background: var(--background);
+        display: grid;
+        align-items: center;
+      }
+
+      .classlist input[type='checkbox']::before,
+      input[type='checkbox']::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        top: auto;
+        background: var(--check);
+        border-radius: 2px;
+      }
+
+      .classlist input[type='checkbox']::before {
+        width: 0px;
+        right: 60%;
+        transform-origin: right bottom;
+      }
+
+      .classlist input[type='checkbox']::before {
+        width: 0px;
+        left: 40%;
+        transform-origin: left bottom;
+      }
+    </style>
   </body>
 </html>
